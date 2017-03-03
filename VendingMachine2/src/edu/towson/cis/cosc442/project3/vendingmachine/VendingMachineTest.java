@@ -3,19 +3,20 @@ package edu.towson.cis.cosc442.project3.vendingmachine;
 import org.junit.*;
 import static org.junit.Assert.*;
 
+// TODO: Auto-generated Javadoc
 /**
  * The class <code>VendingMachineTest</code> contains tests for the class <code>{@link VendingMachine}</code>.
  *
- * @generatedBy CodePro at 3/2/17 11:42 PM
  * @author Owner
  * @version $Revision: 1.0 $
+ * @generatedBy CodePro at 3/2/17 11:42 PM
  */
 public class VendingMachineTest {
+	
 	/**
 	 * Run the VendingMachine() constructor test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test
@@ -24,7 +25,6 @@ public class VendingMachineTest {
 
 		VendingMachine result = new VendingMachine();
 
-		// add additional test code here
 		assertNotNull(result);
 		assertEquals(0.0, result.returnChange(), 1.0);
 		assertEquals(0.0, result.getBalance(), 1.0);
@@ -33,8 +33,7 @@ public class VendingMachineTest {
 	/**
 	 * Run the VendingMachine() constructor test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test
@@ -43,7 +42,6 @@ public class VendingMachineTest {
 
 		VendingMachine result = new VendingMachine();
 
-		// add additional test code here
 		assertNotNull(result);
 		assertEquals(0.0, result.returnChange(), 1.0);
 		assertEquals(0.0, result.getBalance(), 1.0);
@@ -52,8 +50,7 @@ public class VendingMachineTest {
 	/**
 	 * Run the void addItem(VendingMachineItem,String) method test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test
@@ -65,15 +62,12 @@ public class VendingMachineTest {
 		String code = "A";
 
 		fixture.addItem(item, code);
-
-		// add additional test code here
 	}
 
 	/**
 	 * Run the void addItem(VendingMachineItem,String) method test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test
@@ -82,18 +76,27 @@ public class VendingMachineTest {
 		VendingMachine fixture = new VendingMachine();
 		fixture.balance = 1.0;
 		VendingMachineItem item = new VendingMachineItem("", 1.0);
-		String code = "A";
+		//My modification of the code from "A" to "B"
+		String code = "B";
 
 		fixture.addItem(item, code);
-
-		// add additional test code here
+		//Adding a try catch block
+		try
+		{
+		fixture.addItem(item, code);
+		fail("Exception expected");
+		}
+		catch (VendingMachineException v)
+		{
+			
+		}
+		
 	}
 
 	/**
 	 * Run the void addItem(VendingMachineItem,String) method test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test(expected = edu.towson.cis.cosc442.project3.vendingmachine.VendingMachineException.class)
@@ -106,14 +109,12 @@ public class VendingMachineTest {
 
 		fixture.addItem(item, code);
 
-		// add additional test code here
 	}
 
 	/**
 	 * Run the double getBalance() method test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test
@@ -124,15 +125,13 @@ public class VendingMachineTest {
 
 		double result = fixture.getBalance();
 
-		// add additional test code here
 		assertEquals(1.0, result, 0.1);
 	}
 
 	/**
 	 * Run the VendingMachineItem getItem(String) method test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test
@@ -144,15 +143,13 @@ public class VendingMachineTest {
 
 		VendingMachineItem result = fixture.getItem(code);
 
-		// add additional test code here
 		assertEquals(null, result);
 	}
 
 	/**
 	 * Run the VendingMachineItem getItem(String) method test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test(expected = edu.towson.cis.cosc442.project3.vendingmachine.VendingMachineException.class)
@@ -163,16 +160,13 @@ public class VendingMachineTest {
 		String code = "";
 
 		VendingMachineItem result = fixture.getItem(code);
-
-		// add additional test code here
 		assertNotNull(result);
 	}
 
 	/**
 	 * Run the void insertMoney(double) method test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test
@@ -183,15 +177,12 @@ public class VendingMachineTest {
 		double amount = 1.0;
 
 		fixture.insertMoney(amount);
-
-		// add additional test code here
 	}
 
 	/**
 	 * Run the void insertMoney(double) method test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test(expected = edu.towson.cis.cosc442.project3.vendingmachine.VendingMachineException.class)
@@ -203,14 +194,12 @@ public class VendingMachineTest {
 
 		fixture.insertMoney(amount);
 
-		// add additional test code here
 	}
 
 	/**
 	 * Run the boolean makePurchase(String) method test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test
@@ -222,15 +211,13 @@ public class VendingMachineTest {
 
 		boolean result = fixture.makePurchase(code);
 
-		// add additional test code here
 		assertEquals(false, result);
 	}
 
 	/**
 	 * Run the boolean makePurchase(String) method test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test
@@ -239,18 +226,17 @@ public class VendingMachineTest {
 		VendingMachine fixture = new VendingMachine();
 		fixture.balance = 1.0;
 		String code = "A";
-
+		VendingMachineItem item = new VendingMachineItem("Coke", 1.0);
+		fixture.addItem(item, code);
 		boolean result = fixture.makePurchase(code);
 
-		// add additional test code here
-		assertEquals(false, result);
+		assertTrue(result);
 	}
 
 	/**
 	 * Run the boolean makePurchase(String) method test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test
@@ -259,18 +245,15 @@ public class VendingMachineTest {
 		VendingMachine fixture = new VendingMachine();
 		fixture.balance = 1.0;
 		String code = "A";
-
 		boolean result = fixture.makePurchase(code);
 
-		// add additional test code here
 		assertEquals(false, result);
 	}
 
 	/**
 	 * Run the boolean makePurchase(String) method test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test(expected = edu.towson.cis.cosc442.project3.vendingmachine.VendingMachineException.class)
@@ -282,15 +265,13 @@ public class VendingMachineTest {
 
 		boolean result = fixture.makePurchase(code);
 
-		// add additional test code here
 		assertTrue(result);
 	}
 
 	/**
 	 * Run the VendingMachineItem removeItem(String) method test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test(expected = edu.towson.cis.cosc442.project3.vendingmachine.VendingMachineException.class)
@@ -302,15 +283,13 @@ public class VendingMachineTest {
 
 		VendingMachineItem result = fixture.removeItem(code);
 
-		// add additional test code here
 		assertNotNull(result);
 	}
 
 	/**
 	 * Run the VendingMachineItem removeItem(String) method test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test(expected = edu.towson.cis.cosc442.project3.vendingmachine.VendingMachineException.class)
@@ -318,19 +297,18 @@ public class VendingMachineTest {
 		throws Exception {
 		VendingMachine fixture = new VendingMachine();
 		fixture.balance = 1.0;
-		String code = "A";
-
+		//Modified from A to C
+		String code = "C";
 		VendingMachineItem result = fixture.removeItem(code);
 
-		// add additional test code here
 		assertNotNull(result);
+		
 	}
 
 	/**
 	 * Run the VendingMachineItem removeItem(String) method test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test(expected = edu.towson.cis.cosc442.project3.vendingmachine.VendingMachineException.class)
@@ -341,16 +319,30 @@ public class VendingMachineTest {
 		String code = "A";
 
 		VendingMachineItem result = fixture.removeItem(code);
-
-		// add additional test code here
 		assertNotNull(result);
 	}
 
 	/**
+	 * Test remove item 4.
+	 * Tests that an item in the array is removed and returned by the removeItem method
+	 * @throws Exception the exception
+	 */
+	@Test(expected = edu.towson.cis.cosc442.project3.vendingmachine.VendingMachineException.class)
+	public void testRemoveItem_4()
+		throws Exception {
+		VendingMachine fixture = new VendingMachine();
+		fixture.balance = 1.0;
+		String code = "D";
+		VendingMachineItem result = new VendingMachineItem("Coke", 1.0);
+		fixture.addItem(result, code);
+		assertEquals(result, fixture.removeItem(code));
+		
+	}
+	
+	/**
 	 * Run the double returnChange() method test.
 	 *
-	 * @throws Exception
-	 *
+	 * @throws Exception the exception
 	 * @generatedBy CodePro at 3/2/17 11:42 PM
 	 */
 	@Test
@@ -361,7 +353,6 @@ public class VendingMachineTest {
 
 		double result = fixture.returnChange();
 
-		// add additional test code here
 		assertEquals(1.0, result, 0.1);
 	}
 
@@ -376,7 +367,7 @@ public class VendingMachineTest {
 	@Before
 	public void setUp()
 		throws Exception {
-		// add additional set up code here
+		
 	}
 
 	/**
@@ -390,7 +381,7 @@ public class VendingMachineTest {
 	@After
 	public void tearDown()
 		throws Exception {
-		// Add additional tear down code here
+	
 	}
 
 	/**
