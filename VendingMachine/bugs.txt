@@ -1,0 +1,14 @@
+1. Bug found in VendingMachineItem class in VendingMachineItem() constructor: The price should not be allowed to be zero because it does not make sense. 
+   So I corrected it to throw an exception when the price is 0 and when the price is negative.
+2. Bug in insertMoney method: The user should not be able to insert 0 dollars as an amount since it does not make any sense. 
+   So I corrected it to throw an exception when the user tries to insert 0 dollars. 
+3. Bug in protected modifier for the balance: Another class should not be able to access the balance variable and be able to change it to a negative value. 
+   I made it a private variable so that it can only be modified by the insertMoney, makePurchase, and returnChange methods.
+4. Bug in protected modifier for getItem() method: It does not seem to affect the functionality of the program but it does not seem to make sense because 
+   there is no inheritance in this program. So I corrected it to be a public method.
+5. Bug in public modifier for static variables NUM_SLOTS, A_CODE, B_CODE, C_CODE, D_CODE: It does not seem to make sense that these variables would be public
+   because they are static, final, and not accessed outside of the VendingMachineClass. So I changed their declarations to private.
+6. Bug in removeItem method: Setting itemArray[slotIndex] to null regardless of whether or not is already null or not. I corrected it to set itemArray[slotIndex] to null only if the slot was not already null. 
+   It is unnecessary to set an already null object to null. 
+7. Bug in returnChange method: No need to set the balance to 0 unless it is not 0.
+   So I added an if statement to check that the balance is not zero before setting the balance to zero. It makes the code clearer to understand.

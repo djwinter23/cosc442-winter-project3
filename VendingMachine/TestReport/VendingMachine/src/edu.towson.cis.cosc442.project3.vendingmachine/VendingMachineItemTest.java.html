@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>VendingMachineItemTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">edu.towson.cis.cosc442.project3.vendingmachine (1) (Mar 2, 2017 10:39:49 PM)</a> &gt; <a href="../../index.html" class="el_group">VendingMachine</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">edu.towson.cis.cosc442.project3.vendingmachine</a> &gt; <span class="el_source">VendingMachineItemTest.java</span></div><h1>VendingMachineItemTest.java</h1><pre class="source lang-java linenums">package edu.towson.cis.cosc442.project3.vendingmachine;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+// TODO: Auto-generated Javadoc
+/**
+ * The Class VendingMachineItemTest.
+ */
+<span class="fc" id="L13">public class VendingMachineItemTest {</span>
+
+	/** The vend. */
+	private VendingMachineItem vend;
+	
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+<span class="fc" id="L25">		vend = new VendingMachineItem(&quot;Sunkist&quot;, 2.0);</span>
+<span class="fc" id="L26">	}</span>
+
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
+	@After
+	public void tearDown() throws Exception {
+<span class="fc" id="L35">	}</span>
+
+	/**
+	 * Test vending machine item name.
+	 * This test case shows that the constructor can assign the specified name to a VendingMachineItem object
+	 * and uses the getName method to verify equality.
+	 */
+	@Test
+	public void testVendingMachineItemName() {
+<span class="fc" id="L44">		VendingMachineItem vend2 = new VendingMachineItem(&quot;Sunkist&quot;, 2.0);</span>
+<span class="fc" id="L45">		assertEquals(&quot;Sunkist&quot;, vend2.getName());</span>
+<span class="fc" id="L46">	}</span>
+
+	/**
+	 * Test vending machine item price of zero.
+	 * This test case shows that a price of zero dollars cannot be assigned to a VendingMachineItem object and an exception is 
+	 * expected to be thrown.
+	 */
+	@Test
+	public void testVendingMachineItemPriceOfZero() {
+		try
+		{
+<span class="nc" id="L57">			VendingMachineItem vend2 = new VendingMachineItem(&quot;Sunkist&quot;, 0.0);</span>
+<span class="nc" id="L58">			fail(&quot;Exception expected&quot;);</span>
+<span class="nc" id="L59">		}</span>
+<span class="fc" id="L60">		catch (VendingMachineException v)</span>
+		{
+			
+		}	
+		
+<span class="fc" id="L65">	}</span>
+	
+	/**
+	 * Test vending machine item price.
+	 * This test case shows that the constructor does proper assignment of the price of an item if that price &gt;= 0.
+	 */
+	@Test
+	public void testVendingMachineItemPrice() {
+<span class="fc" id="L73">		VendingMachineItem vend2 = new VendingMachineItem(&quot;Sunkist&quot;, 2.0);</span>
+<span class="fc" id="L74">		assertEquals(2.0, vend2.getPrice(), 0.001);</span>
+<span class="fc" id="L75">	}</span>
+
+	
+	/**
+	 * Test vending machine item price exception.
+	 * This test case shows that a negative price cannot be assigned to a VendingMachineItem object and an exception should be thrown.
+	 */
+	@Test
+	public void testVendingMachineItemPriceException() {
+		try
+		{
+<span class="nc" id="L86">			VendingMachineItem vend2 = new VendingMachineItem(&quot;Sunkist&quot;, -2.0);</span>
+<span class="nc" id="L87">			fail(&quot;Exception expected&quot;);</span>
+<span class="nc" id="L88">		}</span>
+<span class="fc" id="L89">		catch(VendingMachineException v)</span>
+		{
+			
+		}
+		
+<span class="fc" id="L94">	}</span>
+	
+
+	/**
+	 * Test get name.
+	 * This test case shows that the getName method returns the assigned name of a declared VendingMachineItem object.
+	 */
+	@Test
+	public void testGetName() {
+<span class="fc" id="L103">		assertEquals(&quot;Sunkist&quot;, vend.getName());</span>
+<span class="fc" id="L104">	}</span>
+
+	/**
+	 * Test get price.
+	 * This test case shows that the getPrice returns the assigned price of a declared VendingMachineItem object.
+	 */
+	@Test
+	public void testGetPrice() {
+<span class="fc" id="L112">		assertEquals(2.0, vend.getPrice(), 0.001);</span>
+<span class="fc" id="L113">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>edu.towson.cis.cosc442.project3.vendingmachine (1) (Mar 2, 2017 10:39:49 PM)</div></body></html>
